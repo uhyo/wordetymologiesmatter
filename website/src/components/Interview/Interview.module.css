@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.contents {
+  display: grid;
+  flex: calc(min(100vw, 800px)) 0 0;
+  grid-template: "quote1 main quote2" auto / auto 1fr auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+.contents::before {
+  content: "“";
+  grid-area: quote1;
+  font-size: 8em;
+  height: 0.4em;
+  line-height: 1;
+  color: #aaaaaa;
+  text-align: start;
+}
+
+.contents::after {
+  content: "”";
+  grid-area: quote2;
+  font-size: 8em;
+  line-height: 1;
+  color: #aaaaaa;
+  height: 0.4em;
+  align-self: end;
+  text-align: end;
+  overflow: hidden;
+}
+
+.contents > blockquote {
+  grid-area: main;
+  padding: 1em;
+  font-size: 1.2em;
+  font-family: "Domine", sans-serif;
+  font-weight: 100;
+  text-align: justify;
+  line-height: 1.6;
+  color: #222222;
+}
+
+.contents p + p {
+  margin-top: 1em;
+}
+
+@media (max-width: 600px) {
+  .contents {
+    grid-template:
+      "quote1" auto
+      "main" auto
+      "quote2" auto / auto;
+  }
+  .contents > blockquote {
+    padding: 0.5em;
+    font-size: 1.1em;
+  }
+}

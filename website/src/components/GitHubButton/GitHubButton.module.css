@@ -1,0 +1,10 @@
+.button {
+  display: inline-block;
+  border-radius: 2rem;
+  padding: 1rem;
+  font-family: "Lato", sans-serif;
+  font-size: 1.4rem;
+
+  background-color: #333333;
+  color: #ffffff;
+}
